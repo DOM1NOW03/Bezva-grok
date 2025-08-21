@@ -1,0 +1,530 @@
+/* ===== Modal.css — Propracované, přístupné a výkonné styly modalu ===== */
+
+/* Kořen modalu */
+.attraction-modal {
+position: fixed;
+inset: 0;
+z-index: 2000;
+display: grid;
+place-items: center;
+opacity: 0;
+visibility: hidden;
+transition: visibility 300ms step-end, opacity 300ms ease;
+}
+
+/* Aktivní stav (zobrazit) */
+.attraction-modal.active {
+opacity: 1;
+visibility: visible;
+transition: opacity 300ms ease;
+}
+
+/* Overlay s blur efektem */
+.modal-overlay {
+position: absolute;
+inset: 0;
+background: rgba(46, 46, 46, 0.75);
+backdrop-filter: blur(6px);
+}
+
+/* Kontejner modalu */
+.modal-container {
+position: relative;
+background: #ffffff;
+color: #2E2E2E;
+border-radius: 20px;
+width: min(1200px, 94vw);
+max-height: 90vh;
+overflow: hidden;
+box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+transform: translateY(24px) scale(0.96);
+opacity: 0;
+will-change: transform, opacity;
+contain: layout paint;
+}
+
+/* Hlaviční zavírací tlačítko */
+.modal-close {
+position: absolute;
+top: 14px;
+right: 14px;
+width: 40px;
+height: 40px;
+border-radius: 999px;
+border: 2px solid transparent;
+background: rgba(246, 247, 248, 0.95);
+color: var(--dark-bg, #2E2E2E);
+font-size: 22px;
+line-height: 1;
+cursor: pointer;
+z-index: 10;
+transition: transform 200ms ease, background 200ms ease, color 200ms ease, border-color 200ms ease;
+box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+.modal-close:hover {
+transform: scale(1.06);
+background: var(--primary-green, #A4D65E);
+color: #111;
+border-color: var(--primary-green, #A4D65E);
+}
+.modal-close:focus {
+outline: 3px solid var(--primary-green, #A4D65E);
+outline-offset: 2px;
+}
+
+/* Obsah modalu: 2 sloupce na desktopu */
+.modal-content {
+display: grid;
+grid-template-columns: 1.15fr 0.85fr;
+gap: 0;
+min-height: 600px;
+}
+
+/* Galerie */
+.modal-gallery {
+position: relative;
+background: #f5f7f8;
+}
+
+/* Hlavní obrázek */
+.main-image {
+position: relative;
+height: 420px;
+overflow: hidden;
+isolation: isolate;
+}
+.main-image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transform: scale(1.02);
+transition: transform 600ms cubic-bezier(.25,.46,.45,.94);
+}
+.main-image:hover img {
+transform: scale(1.04);
+}
+
+/* Navigace obrázků */
+.image-navigation {
+position: absolute;
+inset: 0;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding-inline: 16px;
+pointer-events: none;
+}
+.nav-btn {
+pointer-events: auto;
+width: 44px;
+height: 44px;
+border-radius: 999px;
+border: 0;
+background: rgba(255, 255, 255, 0.92);
+color: #111;
+font-size: 18px;
+box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+cursor: pointer;
+}
+.nav-btn:hover {
+background: var(--primary-green, #A4D65E);
+color: #111;
+transform: scale(1.06);
+}
+
+/* Seznam náhledů */
+.thumbnail-gallery {
+display: flex;
+gap: 10px;
+padding: 16px;
+overflow-x: auto;
+background: #fff;
+}
+.thumbnail {
+display: inline-grid;
+place-items: center;
+width: 86px;
+height: 64px;
+border-radius: 10px;
+overflow: hidden;
+border: 2px solid transparent;
+background: #f2f2f2;
+transition: border-color 180ms ease, transform 180ms ease;
+cursor: pointer;
+}
+.thumbnail img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.thumbnail:hover { transform: translateY(-2px); }
+.thumbnail.active { border-color: var(--primary-green, #A4D65E); }
+
+/* Informační panel vpravo */
+.modal-info {
+padding: 26px;
+display: flex;
+flex-direction: column;
+gap: 22px;
+background: #fff;
+}
+
+.attraction-header h2 {
+font-size: 1.8rem;
+margin: 0 0 4px;
+color: #2E2E2E;
+}
+.attraction-rating {
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.attraction-rating .stars {
+color: #FFD700;
+font-size: 1.05rem;
+}
+.attraction-rating .reviews-count {
+color: #666;
+font-size: 0.95rem;
+}
+
+/* Cena */
+.price-section {
+background: linear-gradient(135deg, rgba(197, 225, 165, 0.35), rgba(164, 214, 94, 0.08));
+padding: 16px 18px;
+border-radius: 12px;
+border-left: 4px solid var(--primary-green, #A4D65E);
+}
+.price-display {
+display: flex;
+align-items: baseline;
+gap: 6px;
+}
+.price-from {
+color: #666;
+font-size: 0.95rem;
+}
+.main-price {
+font-size: 2.2rem;
+font-weight: 800;
+color: var(--primary-green, #A4D65E);
+letter-spacing: -0.02em;
+}
+.currency {
+color: #666;
+font-size: 1rem;
+}
+.price-note {
+font-size: 0.85rem;
+color: #666;
+margin-top: 4px;
+}
+
+/* Specifikace */
+.specifications h3 {
+font-size: 1.25rem;
+color: #2E2E2E;
+margin: 0 0 12px;
+}
+.spec-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 12px;
+}
+.spec-item {
+display: flex;
+justify-content: space-between;
+gap: 10px;
+padding: 10px 12px;
+background: #f8f9fa;
+border-radius: 10px;
+border-left: 3px solid var(--primary-green, #A4D65E);
+}
+.spec-label {
+font-weight: 700;
+color: #2E2E2E;
+}
+.spec-value {
+color: #666;
+text-align: right;
+}
+
+/* Rezervační formulář */
+.reservation-form {
+background: #f8f9fa;
+padding: 18px;
+border-radius: 12px;
+border: 2px solid var(--light-green, #C5E1A5);
+}
+.reservation-form h3 {
+font-size: 1.25rem;
+margin: 0 0 14px;
+color: #2E2E2E;
+}
+.form-row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 12px;
+margin-bottom: 14px;
+}
+.form-group {
+display: flex;
+flex-direction: column;
+gap: 6px;
+}
+.form-group label {
+font-weight: 700;
+font-size: 0.95rem;
+color: #2E2E2E;
+}
+.form-group input,
+.form-group select {
+padding: 12px;
+border: 2px solid var(--light-green, #C5E1A5);
+border-radius: 10px;
+font-size: 1rem;
+transition: border-color 200ms ease, box-shadow 200ms ease;
+background: #fff;
+}
+.form-group input:focus,
+.form-group select:focus {
+outline: none;
+border-color: var(--primary-green, #A4D65E);
+box-shadow: 0 0 0 3px rgba(164, 214, 94, 0.15);
+}
+
+/* Doplňkové služby */
+.additional-services {
+margin: 14px 0;
+}
+.additional-services h4 {
+margin: 0 0 10px;
+color: #2E2E2E;
+font-size: 1.1rem;
+}
+.service-options {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.service-option {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 10px 12px;
+border-radius: 10px;
+cursor: pointer;
+transition: background-color 180ms ease;
+position: relative;
+user-select: none;
+}
+.service-option:hover {
+background: rgba(164, 214, 94, 0.1);
+}
+.service-option input[type="checkbox"] {
+position: absolute;
+opacity: 0;
+pointer-events: none;
+}
+.service-option .checkmark {
+width: 20px;
+height: 20px;
+border: 2px solid var(--primary-green, #A4D65E);
+border-radius: 4px;
+position: relative;
+transition: background 180ms ease, border-color 180ms ease;
+background: #fff;
+}
+.service-option input[type="checkbox"]:checked + .checkmark {
+background: var(--primary-green, #A4D65E);
+border-color: var(--primary-green, #A4D65E);
+}
+.service-option input[type="checkbox"]:checked + .checkmark::after {
+content: '✓';
+position: absolute;
+inset: 0;
+display: grid;
+place-items: center;
+color: #fff;
+font-weight: 800;
+font-size: 12px;
+}
+
+/* Cenová kalkulačka */
+.price-calculator {
+background: #fff;
+padding: 14px;
+border-radius: 10px;
+border: 1px solid var(--light-green, #C5E1A5);
+margin: 12px 0 0;
+}
+.calculation-row {
+display: flex;
+justify-content: space-between;
+padding: 8px 0;
+border-bottom: 1px solid #eee;
+font-size: 0.98rem;
+}
+.calculation-row:last-child {
+border-bottom: 0;
+}
+.total-row {
+border-top: 2px solid var(--primary-green, #A4D65E);
+margin-top: 10px;
+padding-top: 12px;
+font-size: 1.1rem;
+}
+.calc-price {
+color: var(--primary-green, #A4D65E);
+font-weight: 700;
+}
+.total-price {
+font-size: 1.25rem;
+}
+
+/* Akční tlačítka */
+.action-buttons {
+display: flex;
+gap: 12px;
+margin-top: 14px;
+}
+.action-buttons .btn-secondary {
+flex: 1;
+padding: 12px 18px;
+background: #fff;
+color: var(--primary-green, #A4D65E);
+border: 2px solid var(--primary-green, #A4D65E);
+border-radius: 999px;
+font-weight: 800;
+cursor: pointer;
+transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+.action-buttons .btn-secondary:hover {
+background: var(--primary-green, #A4D65E);
+color: #111;
+transform: translateY(-2px);
+}
+.action-buttons .btn-primary {
+flex: 2;
+padding: 12px 18px;
+background: linear-gradient(135deg, var(--primary-green, #A4D65E), var(--dark-green, #7CB342));
+color: #fff;
+border: 0;
+border-radius: 999px;
+font-weight: 800;
+cursor: pointer;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+transition: transform 200ms cubic-bezier(.34,1.56,.64,1), box-shadow 200ms ease;
+box-shadow: 0 10px 26px rgba(164, 214, 94, 0.35);
+}
+.action-buttons .btn-primary:hover {
+transform: translateY(-2px) scale(1.02);
+box-shadow: 0 16px 36px rgba(164, 214, 94, 0.45);
+}
+
+/* Tabs */
+.modal-tabs {
+border-top: 1px solid #eee;
+background: #f8f9fa;
+}
+.tab-navigation {
+display: flex;
+border-bottom: 1px solid #eee;
+}
+.tab-btn {
+flex: 1;
+padding: 14px 16px;
+background: none;
+border: 0;
+cursor: pointer;
+font-weight: 700;
+color: #666;
+transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
+border-bottom: 3px solid transparent;
+}
+.tab-btn.active {
+color: var(--primary-green, #A4D65E);
+border-bottom-color: var(--primary-green, #A4D65E);
+background: rgba(164, 214, 94, 0.08);
+}
+.tab-content {
+padding: 20px 24px;
+}
+.tab-panel {
+display: none;
+}
+.tab-panel.active {
+display: block;
+}
+
+/* Seznamy "co je zahrnuto" a "bezpečnost" */
+.included-list,
+.safety-list {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+.included-list li,
+.safety-list li {
+padding: 10px 0 10px 28px;
+border-bottom: 1px solid #eee;
+position: relative;
+color: #444;
+}
+.included-list li::before {
+content: '✓';
+position: absolute;
+left: 0;
+color: var(--primary-green, #A4D65E);
+font-weight: 800;
+}
+.safety-list li::before {
+content: '⚠';
+position: absolute;
+left: 0;
+color: #FF6B35;
+}
+
+/* Recenze */
+.review-item {
+padding: 16px;
+background: #fff;
+border-radius: 10px;
+margin-bottom: 12px;
+border-left: 3px solid var(--primary-green, #A4D65E);
+}
+.review-header {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-bottom: 8px;
+}
+.review-stars {
+color: #FFD700;
+}
+
+/* Responsivita */
+@media (max-width: 980px) {
+.modal-container { width: min(100%, 96vw); max-height: 92vh; }
+.modal-content { grid-template-columns: 1fr; min-height: 0; }
+.main-image { height: 320px; }
+.form-row { grid-template-columns: 1fr; }
+.spec-grid { grid-template-columns: 1fr; }
+.action-buttons { flex-direction: column; }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+.attraction-modal,
+.modal-container,
+.thumbnail,
+.nav-btn,
+.main-image img {
+transition: none !important;
+animation: none !important;
+}
+}

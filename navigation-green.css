@@ -1,0 +1,167 @@
+/* ===== Navigation-green.css — Profesionální navigace se zeleným tématem ===== */
+
+/* Design tokens (spoléhá na root proměnné ze Styles.css, ale přidává nav specifika) */
+:root{
+  --nav-bg: linear-gradient(135deg, var(--dark-bg) 0%, #1B1B1B 100%);
+  --nav-border: 2px solid var(--primary-green);
+  --nav-shadow: 0 4px 20px rgba(164,214,94,.28);
+  --nav-blur: 10px;
+}
+
+/* Wrapper */
+.main-navigation {
+  background: var(--nav-bg);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-navigation.is-scrolled {
+  background: rgba(26, 26, 26, 0.92);
+}
+
+@keyframes navDrop {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Container */
+.nav-container{
+  max-width: var(--container-max-width, 1200px);
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Logo */
+.logo{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  text-decoration: none;
+  transition: transform var(--duration-normal,200ms) var(--ease-out, ease);
+}
+.logo:hover{ transform: translateY(-1px) scale(1.015); }
+.logo-image{ width: 45px; height: 45px; display: block; }
+.logo-text strong{
+  color: var(--primary-green);
+  font-size: 1.35rem;
+  letter-spacing: -0.3px;
+  line-height: 1;
+}
+.logo-text small{
+  display: block;
+  color: var(--light-green);
+  margin-top: -4px;
+  font-size: .72rem;
+}
+
+/* Akce vpravo (search, cart, hamburger) */
+.nav-actions{
+  display: inline-flex; align-items: center; gap: 12px;
+}
+.search-btn,.cart-btn,.menu-toggle{
+  width: 44px; height: 44px; border-radius: 999px;
+  background: rgba(164,214,94,.14);
+  border: 2px solid var(--primary-green);
+  color: var(--primary-green);
+  display: inline-flex; align-items:center; justify-content:center;
+  cursor: pointer; position: relative; overflow: hidden;
+  transition: transform var(--duration-normal,200ms) var(--ease-bounce, cubic-bezier(.34,1.56,.64,1)), 
+              background var(--duration-normal,200ms) var(--ease-out, ease), 
+              color var(--duration-normal,200ms) var(--ease-out, ease), 
+              box-shadow var(--duration-normal,200ms) var(--ease-out, ease);
+}
+.search-btn:hover,.cart-btn:hover,.menu-toggle:hover{
+  background: var(--primary-green);
+  color: #111;
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 10px 30px rgba(164,214,94,.35);
+}
+
+/* Počet v košíku */
+.cart-count{
+  position: absolute; top: -6px; right: -6px;
+  background: var(--dark-green); color: #fff;
+  border-radius: 999px; min-width: 20px; height: 20px; padding: 0 6px;
+  display: grid; place-items: center; font-size: .72rem; font-weight: 800;
+  box-shadow: 0 6px 16px rgba(0,0,0,.22);
+  animation: cartPop 460ms var(--ease-bounce, cubic-bezier(.34,1.56,.64,1));
+}
+@keyframes cartPop{ from{ transform: scale(.6); opacity: .2 } to{ transform: scale(1); opacity: 1 } }
+
+/* Hamburger */
+.menu-toggle{ flex-direction: column; gap: 4px; }
+.hamburger-line{
+  width: 18px; height: 2px; background: var(--primary-green);
+  transition: transform var(--duration-normal,200ms) var(--ease-out, ease), opacity var(--duration-normal,200ms) var(--ease-out, ease);
+  transform-origin: center;
+}
+.menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(2){ opacity: 0; }
+.menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+
+/* Mobile menu */
+.mobile-menu{
+  position: absolute; inset: auto 0 0 0; top: 100%;
+  background: var(--nav-bg);
+  border-top: 1px solid var(--primary-green);
+  transform: translateY(-10px); opacity: 0; visibility: hidden;
+  transition: opacity var(--duration-slow,300ms) var(--ease-out, ease), 
+              transform var(--duration-slow,300ms) var(--ease-out, ease),
+              visibility var(--duration-slow,300ms) step-end;
+  box-shadow: 0 14px 40px rgba(0,0,0,.25);
+}
+.mobile-menu.active{
+  transform: translateY(0);
+  opacity: 1; visibility: visible;
+}
+.nav-links{ list-style: none; margin: 0; padding: 12px 0; }
+.nav-link{
+  display: block; color: #fff; padding: 14px 22px; font-weight: 600;
+  transition: color var(--duration-normal,200ms) var(--ease-out, ease), transform var(--duration-normal,200ms) var(--ease-out, ease), background var(--duration-normal,200ms) var(--ease-out, ease);
+  position: relative; overflow: hidden;
+}
+.nav-link::before{
+  content: ''; position: absolute; inset: 0; left: -100%;
+  background: rgba(164,214,94,.1);
+  transition: left var(--duration-normal,200ms) var(--ease-out, ease);
+}
+.nav-link:hover{ color: var(--primary-green); transform: translateX(6px); }
+.nav-link:hover::before{ left: 0; }
+
+/* Desktop (nad 980px) — mobile menu skryté */
+@media (min-width: 980px){
+  .mobile-menu{ display: none; }
+}
+
+/* Stav při scrollu (měníme pozadí tak, aby bylo kompaktnější) */
+@media (prefers-reduced-motion: no-preference){
+  .main-navigation.is-scrolled{
+    background: rgba(26,26,26,.92);
+  }
+}
+
+/* High-contrast přístupnost */
+@media (prefers-contrast: more){
+  .main-navigation{ border-bottom: 3px solid var(--primary-green); }
+  .search-btn,.cart-btn,.menu-toggle{ border-width: 3px; }
+  .nav-link{ font-weight: 700; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .main-navigation{ animation: none; }
+  .search-btn,.cart-btn,.menu-toggle,.nav-link,.mobile-menu{
+    transition: none !important;
+  }
+}
+
+/* Drobné úpravy pro malé obrazovky */
+@media (max-width: 480px){
+  .logo-text strong{ font-size: 1.2rem; }
+  .nav-actions{ gap: 10px; }
+  .search-btn,.cart-btn,.menu-toggle{ width: 42px; height: 42px; }
+}

@@ -1,0 +1,136 @@
+/* ===== Hero-green.css — Hero + slider v zeleném tématu, mobile-first, performant ===== */
+
+/* Spoléhá na proměnné ve Styles.css: --primary-green, --accent-green, --light-green, --dark-green, --dark-bg, --darker-bg */
+
+/* Sekce hero /
+.hero-section {
+position: relative;
+min-height: 100vh;
+display: flex;
+align-items: center;
+overflow: hidden;
+background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 30%, var(--dark-green) 110%);
+margin-top: 70px; / prostor pod fixed navigací */
+}
+
+/* Dekor pozadí: gradient + jemné částice */
+.hero-background { position: absolute; inset: 0; z-index: 1; }
+.hero-gradient-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse at 35% 35%, rgba(164,214,94,.18), transparent 55%); pointer-events: none; }
+.hero-particles {
+position: absolute; inset: 0; pointer-events: none;
+background-image:
+radial-gradient(circle at 20% 80%, rgba(164,214,94,.28) 2px, transparent 2px),
+radial-gradient(circle at 80% 20%, rgba(156,204,101,.22) 3px, transparent 3px);
+background-size: 120px 120px, 180px 180px;
+animation: particlesFloat 22s linear infinite;
+}
+@keyframes particlesFloat {
+0% { transform: translate(0,0) rotate(0deg); }
+33% { transform: translate(30px,-24px) rotate(120deg); }
+66% { transform: translate(-18px,18px) rotate(240deg); }
+100% { transform: translate(0,0) rotate(360deg); }
+}
+
+/* Obsah hero */
+.hero-container {
+position: relative; z-index: 2;
+max-width: var(--container-max-width, 1200px);
+margin: 0 auto; padding: 0 20px;
+display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center;
+}
+.hero-content { color: #fff; }
+.hero-title { font-size: 3.2rem; line-height: 1.08; font-weight: 900; margin: 0 0 16px; text-wrap: balance; }
+.title-main { display:block; opacity:.95; }
+.title-highlight {
+display:block;
+background: linear-gradient(45deg, var(--primary-green), var(--accent-green));
+-webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+animation: titleGlow 3000ms ease-in-out infinite alternate;
+}
+@keyframes titleGlow {
+from { text-shadow: 0 0 14px rgba(164,214,94,.35), 0 0 5px rgba(255,255,255,.22); filter: brightness(1.05); }
+to { text-shadow: 0 0 32px rgba(164,214,94,.7), 0 0 10px rgba(255,255,255,.4); filter: brightness(1.18); }
+}
+.hero-subtitle { color: var(--light-green); font-size: 1.15rem; max-width: 56ch; margin: 0 0 26px; }
+
+/* CTA */
+.hero-cta {
+background: linear-gradient(45deg, var(--primary-green), var(--accent-green));
+color: #111; border: 0; padding: 16px 28px; border-radius: 999px; font-weight: 800;
+cursor: pointer; display: inline-flex; align-items: center; gap: 12px;
+transition: transform 320ms cubic-bezier(.34,1.56,.64,1), box-shadow 220ms var(--ease-out, ease);
+box-shadow: 0 14px 34px rgba(164,214,94,.28); position: relative; overflow: hidden;
+}
+.hero-cta::before {
+content: ''; position: absolute; inset: 0; left: -100%;
+background: linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent);
+transition: left 480ms ease; pointer-events: none;
+}
+.hero-cta:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 20px 48px rgba(164,214,94,.42); }
+.hero-cta:hover::before { left: 100%; }
+.arrow-icon::after { content: '→'; transition: transform 200ms var(--ease-out, ease); }
+.hero-cta:hover .arrow-icon::after { transform: translateX(6px); }
+
+/* Slider wrapper /
+.hero-image { position: relative; }
+.image-slider {
+position: relative; height: 420px; border-radius: 20px; overflow: hidden;
+border: 2px solid var(--primary-green);
+box-shadow: 0 22px 60px rgba(0,0,0,.34);
+touch-action: pan-y; / povolit vert. scroll, zachytit horizontální pro swipe */
+cursor: grab;
+}
+.image-slider:active { cursor: grabbing; }
+
+/* Slide snímky */
+.slide { position: absolute; inset: 0; opacity: 0; transition: opacity 900ms ease-in-out; user-select: none; }
+.slide.active { opacity: 1; }
+.slide img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.02); transition: transform 600ms var(--ease-out, ease); pointer-events: none; }
+.slide.active img { transform: scale(1.04); }
+
+/* Ovládací prvky */
+.slider-controls {
+position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between;
+padding: 0 14px; pointer-events: none;
+}
+.prev-btn, .next-btn {
+pointer-events: auto; width: 48px; height: 48px; border-radius: 50%; border: 0;
+background: rgba(164,214,94,.85); color: #111; font-weight: 800; display: grid; place-items: center;
+transition: transform 200ms var(--ease-out, ease), opacity 200ms var(--ease-out, ease);
+opacity: 0; transform: scale(.9);
+}
+.hero-image:hover .prev-btn, .hero-image:hover .next-btn { opacity: 1; transform: scale(1); }
+.prev-btn:hover, .next-btn:hover { transform: scale(1.08); }
+
+/* Dots */
+.slider-dots { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); display: flex; gap: 10px; z-index: 5; }
+.dot {
+width: 12px; height: 12px; border-radius: 50%;
+background: rgba(255,255,255,.65); border: 2px solid transparent;
+transition: transform 200ms var(--ease-out, ease), background 200ms var(--ease-out, ease), border-color 200ms var(--ease-out, ease);
+}
+.dot.active { background: var(--primary-green); border-color: #fff; transform: scale(1.15); }
+.dot:hover { background: var(--accent-green); transform: scale(1.1); }
+
+/* Swipe hint (skryje se na desktopu po hoveru) */
+.swipe-hint { position: absolute; left: 50%; bottom: 56px; transform: translateX(-50%); color: rgba(255,255,255,.72); font-size: .9rem; }
+@media (hover:hover) { .swipe-hint { opacity: 0; } }
+
+/* Responsivita */
+@media (max-width: 980px) {
+.hero-container { grid-template-columns: 1fr; gap: 36px; text-align: center; }
+.hero-subtitle { margin-inline: auto; }
+.image-slider { height: 320px; }
+.prev-btn, .next-btn { display: none; }
+}
+@media (max-width: 640px) {
+.hero-title { font-size: 2.4rem; }
+.image-slider { height: 280px; }
+.slider-dots { bottom: 12px; gap: 8px; }
+.dot { width: 10px; height: 10px; }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+.hero-cta, .dot, .prev-btn, .next-btn, .slide, .slide img, .hero-particles { transition: none !important; animation: none !important; }
+}

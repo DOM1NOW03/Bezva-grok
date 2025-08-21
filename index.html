@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="cs" data-theme="green">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bezva Parta s.r.o. - Půjčovna nafukovacích atrakcí pro děti i dospělé v Ústeckém kraji. Skákací hrady, skluzavky, sportovní aktivity a párty vybavení.">
+    <meta name="keywords" content="půjčovna atrakcí, skákací hrady, nafukovací skluzavky, párty vybavení, Ústecký kraj, dětské akce">
+    <meta name="author" content="Bezva Parta s.r.o.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bezvaparta.cz/">
+    <meta property="og:title" content="Bezva Parta - Půjčovna atrakcí Ústecký kraj">
+    <meta property="og:description" content="Přivezeme zábavu až k vám domů! Skákací hrady, skluzavky a atrakce pro nezapomenutelné akce.">
+    <meta property="og:image" content="https://bezvaparta.cz/assets/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://bezvaparta.cz/">
+    <meta property="twitter:title" content="Bezva Parta - Půjčovna atrakcí Ústecký kraj">
+    <meta property="twitter:description" content="Přivezeme zábavu až k vám domů! Skákací hrady, skluzavky a atrakce pro nezapomenutelné akce.">
+    <meta property="twitter:image" content="https://bezvaparta.cz/assets/og-image.jpg">
+
+    <title>Bezva Parta - Půjčovna atrakcí | Skákací hrady | Ústecký kraj</title>
+
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navigation-green.css">
+    <link rel="stylesheet" href="css/hero-green.css">
+    <link rel="stylesheet" href="css/section.css">
+    <link rel="stylesheet" href="css/modal.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- Performance hints -->
+    <link rel="preload" href="js/script.js" as="script">
+    <link rel="preload" href="js/modal.js" as="script">
+    <link rel="preload" href="js/cart.js" as="script">
+    <link rel="preload" href="js/products.js" as="script">
+
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Bezva Parta s.r.o.",
+            "image": "https://bezvaparta.cz/assets/logo.png",
+            "description": "Půjčovna nafukovacích atrakcí pro děti i dospělé",
+            "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "Ústecký kraj",
+                "addressCountry": "CZ"
+            },
+            "telephone": "+420 XXX XXX XXX",
+            "openingHours": "Mo-Su 08:00-20:00",
+            "serviceArea": {
+                "@type": "Place",
+                "name": "Ústecký kraj a okolí"
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">Přejít na hlavní obsah</a>
+
+    <!-- Navigation -->
+    <nav class="main-navigation" role="navigation" aria-label="Hlavní navigace">
+        <div class="nav-container">
+            <div class="logo-section">
+                <a href="#" class="logo" aria-label="Bezva Parta - Domovská stránka">
+                    <img src="assets/logo.png" alt="Bezva Parta Logo" class="logo-image" width="45" height="45">
+                    <div class="logo-text">
+                        <strong>Bezva Parta</strong>
+                        <small>s.r.o.</small>
+                    </div>
+                </a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="search-btn" aria-label="Vyhledávání" type="button">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M21.71 20.29L18 16.58A9 9 0 1 0 16.58 18L20.29 21.71A1 1 0 0 0 21.71 20.29ZM11 18A7 7 0 1 1 18 11A7 7 0 0 1 11 18Z" />
+                    </svg>
+                </button>
+
+                <button class="cart-btn" aria-label="Košík" type="button" data-cart-toggle>
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 4V2A1 1 0 0 0 5 2V4H1A1 1 0 0 0 1 6H2.08L4.15 17.25A3 3 0 0 0 7.12 20H16.88A3 3 0 0 0 19.85 17.25L21.92 6H23A1 1 0 0 0 23 4H19V2A1 1 0 0 0 17 2V4H7ZM17 6V8A1 1 0 0 0 19 8V6H20.14L18.36 16.75A1 1 0 0 1 17.38 17.5H6.62A1 1 0 0 1 5.64 16.75L3.86 6H5V8A1 1 0 0 0 7 8V6H17Z" />
+                    </svg>
+                    <span class="cart-count" data-cart-count>0</span>
+                </button>
+
+                <button class="menu-toggle" aria-label="Menu" aria-expanded="false" type="button" data-menu-toggle>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" data-mobile-menu>
+            <ul class="nav-links" role="list">
+                <li><a href="#hero" class="nav-link">Domů</a></li>
+                <li><a href="#services" class="nav-link">Služby</a></li>
+                <li><a href="#catalog" class="nav-link">Katalog</a></li>
+                <li><a href="#about" class="nav-link">O nás</a></li>
+                <li><a href="#contact" class="nav-link">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-background">
+                <div class="background">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="hero-particles"></div>
+                <div class="hero-gradient-overlay"></div>
+            </div>
+
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 id="hero-title" class="hero-title">
+                        <span class="title-main">Přivezeme zábavu</span>
+                        <span class="title-highlight">až k vám domů!</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Atrakce vám přivezeme <strong>vlastními auty</strong> tam, kam potřebujete.
+                        O vše se postaráme – atrakce nainstalujeme i demontujeme, vy jen slavíte.
+                    </p>
+                    <button class="hero-cta" type="button" data-scroll-to="catalog" aria-describedby="cta-description">
+                        <span>Vybrat atrakce</span>
+                        <span class="arrow-icon"></span>
+                    </button>
+                    <div id="cta-description" class="sr-only">
+                        Přejít na katalog produktů
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="image-slider" role="img" aria-label="Fotogalerie našich atrakcí">
+                        <div class="slide active" data-slide="0">
+                            <img src="obrazky/piratska-lod.jpg" alt="Pirátská loď se skluzavkou - nafukovací atrakce" loading="eager" width="640" height="480">
+                        </div>
+                        <div class="slide" data-slide="1">
+                            <img src="Image/Bagr.png" alt="Bagr se skluzavkou - skákací hrad" loading="lazy" width="640" height="480">
+                        </div>
+                        <div class="slide" data-slide="2">
+                            <img src="Image/Vodni-svet.png" alt="Vodní svět se skluzavkou" loading="lazy" width="640" height="480">
+                        </div>
+                        <div class="slide" data-slide="3">
+                            <img src="obrazky/skluzavka-klaun.jpg" alt="Obří skluzavka klaun" loading="lazy" width="640" height="480">
+                        </div>
+
+                        <!-- Controls -->
+                        <div class="slider-controls">
+                            <button class="prev-btn" type="button" aria-label="Předchozí obrázek">‹</button>
+                            <button class="next-btn" type="button" aria-label="Následující obrázek">›</button>
+                        </div>
+
+                        <!-- Dots -->
+                        <div class="slider-dots" role="tablist" aria-label="Navigace fotogalerie">
+                            <button class="dot active" type="button" role="tab" aria-selected="true" aria-label="Obrázek 1" data-slide-to="0"></button>
+                            <button class="dot" type="button" role="tab" aria-selected="false" aria-label="Obrázek 2" data-slide-to="1"></button>
+                            <button class="dot" type="button" role="tab" aria-selected="false" aria-label="Obrázek 3" data-slide-to="2"></button>
+                            <button class="dot" type="button" role="tab" aria-selected="false" aria-label="Obrázek 4" data-slide-to="3"></button>
+                        </div>
+
+                        <!-- Touch hint -->
+                        <div class="swipe-hint" aria-hidden="true">
+                            ← Přejeďte prstem →
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section" aria-labelledby="services-title">
+            <div class="container">
+                <h2 id="services-title" class="section-title">Naše služby</h2>
+                <p class="section-subtitle">
+                    Máme stovky úspěšných akcí a šťastných klientů podle referencí.
+                    Náš tým je připraven zajistit hladký průběh každé události s pojištěním.
+                </p>
+
+                <div class="services-grid">
+                    <article class="service-card" data-aos="fade-up" data-aos-delay="0">
+                        <div class="service-icon" aria-hidden="true">
+                            <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M3 13H1V7A4 4 0 0 1 5 3H19A4 4 0 0 1 23 7V13H21A3 3 0 0 0 18 16V20A1 1 0 0 1 17 21H15A1 1 0 0 1 14 20V16H10V20A1 1 0 0 1 9 21H7A1 1 0 0 1 6 20V16A3 3 0 0 0 3 13Z" />
+                            </svg>
+                        </div>
+                        <h3>Dodání a instalace</h3>
+                        <p>
+                            Atrakce vám dovezeme a nainstalujeme přímo na místě akce. Po skončení vše demontujeme a odvezeme.
+                        </p>
+                    </article>
+
+                    <article class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-icon" aria-hidden="true">
+                            <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 1L21 8V9H3V8L12 1ZM5 11H19A1 1 0 0 1 20 12V20A1 1 0 0 1 19 21H5A1 1 0 0 1 4 20V12A1 1 0 0 1 5 11ZM12 13A3 3 0 1 0 12 19A3 3 0 0 0 12 13Z" />
+                            </svg>
+                        </div>
+                        <h3>Pojištění</h3>
+                        <p>
+                            Všechny naše atrakce jsou pojištěny a pravidelně kontrolovány. Vaše bezpečnost je naší prioritou.
+                        </p>
+                    </article>
+
+                    <article class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-icon" aria-hidden="true">
+                            <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17 3H21A1 1 0 0 1 22 4V20A1 1 0 0 1 21 21H3A1 1 0 0 1 2 20V4A1 1 0 0 1 3 3H7V1A1 1 0 0 1 8 0H16A1 1 0 0 1 17 1V3ZM4 5V19H20V5H17V6A1 1 0 0 1 16 7H8A1 1 0 0 1 7 6V5H4ZM6 8H18V10H6V8ZM6 12H14V14H6V12Z" />
+                            </svg>
+                        </div>
+                        <h3>Poradenství</h3>
+                        <p>
+                            Pomůžeme vám vybrat správné atrakce podle prostoru, věku dětí a typu akce. Zavolejte nám pro konzultaci.
+                        </p>
+                    </article>
+
+                    <article class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-icon" aria-hidden="true">
+                            <svg width="40" height="40" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 22C6.48 22 2 17.52 2 12S6.48 2 12 2S22 6.48 22 12S17.52 22 12 22ZM11 11H7L12 6L17 11H13V17H11V11Z" />
+                            </svg>
+                        </div>
+                        <h3>Rychlé dodání</h3>
+                        <p>
+                            Atrakce můžeme dodat již následující den. Obsloužíme celý Ústecký kraj a blízké okolí.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catalog Section -->
+        <section id="catalog" class="catalog-section" aria-labelledby="catalog-title">
+            <div class="container">
+                <h2 id="catalog-title" class="section-title">Katalog atrakcí</h2>
+                <p class="section-subtitle">
+                    Vyberte si z našeho širokého sortimentu více než 42 atrakcí a vybavení
+                </p>
+
+                <!-- Filters -->
+                <div class="catalog-filters" data-catalog-filters>
+                    <div class="filter-group">
+                        <label for="categoryFilter">Kategorie:</label>
+                        <select id="categoryFilter" data-filter="category">
+                            <option value="">Všechny kategorie</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="searchInput">Hledat:</label>
+                        <input type="search" id="searchInput" placeholder="Zadejte název atrakce..." data-search>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="sortSelect">Řadit podle:</label>
+                        <select id="sortSelect" data-sort>
+                            <option value="name">Název A-Z</option>
+                            <option value="price-low">Cena ↑</option>
+                            <option value="price-high">Cena ↓</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Loading State -->
+                <div class="catalog-loading" data-catalog-loading>
+                    <div class="loading-spinner" aria-label="Načítáme produkty..." role="status">
+                        <div class="spinner"></div>
+                        <span>Načítáme katalog produktů...</span>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="catalog-grid" data-catalog-grid role="region" aria-label="Seznam produktů" aria-live="polite">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+
+                <!-- No Results -->
+                <div class="no-results" data-no-results style="display: none;">
+                    <div class="no-results-content">
+                        <svg width="64" height="64" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M21.71 20.29L18 16.58A9 9 0 1 0 16.58 18L20.29 21.71A1 1 0 0 0 21.71 20.29ZM11 18A7 7 0 1 1 18 11A7 7 0 0 1 11 18Z" />
+                        </svg>
+                        <h3>Žádné výsledky</h3>
+                        <p>
+                            Zkuste změnit filtry nebo hledaný výraz
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section" aria-labelledby="about-title">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 id="about-title">O nás</h2>
+                        <p>
+                            Jsme tým nadšenců, kteří milují vidět šťastné tváře dětí i dospělých.
+                            Naše dlouholeté zkušenosti v oboru nám umožňují poskytovat nejkvalitnější služby a vybavení.
+                        </p>
+                        <p>
+                            Specializujeme se na pronájem nafukovacích atrakcí pro všechny typy akcí -
+                            od dětských narozenin po firemní eventy a městské slavnosti.
+                        </p>
+
+                        <div class="about-features">
+                            <div class="feature">
+                                <span class="feature-icon" aria-hidden="true">✓</span>
+                                <span>Více než 10 let zkušeností</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon" aria-hidden="true">✓</span>
+                                <span>Pojištění a certifikace</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon" aria-hidden="true">✓</span>
+                                <span>Dodání do 24 hodin</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon" aria-hidden="true">✓</span>
+                                <span>Obsluha celého Ústeckého kraje</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-image">
+                        <img src="obrazky/team-photo.jpg" alt="Tým Bezva Parta při instalaci atrakcí" loading="lazy" width="600" height="400">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews" class="reviews-section" aria-labelledby="reviews-title">
+            <div class="container">
+                <h2 id="reviews-title" class="section-title">Spokojení zákazníci</h2>
+
+                <div class="reviews-grid">
+                    <blockquote class="review-card">
+                        <div class="review-stars" aria-label="5 z 5 hvězd">
+                            <span>★★★★★</span>
+                        </div>
+                        <p>
+                            "Perfektní pro narozeniny dcery. Děti byly nadšené!"
+                        </p>
+                        <cite>— Jana K., Ústí nad Labem</cite>
+                    </blockquote>
+
+                    <blockquote class="review-card">
+                        <div class="review-stars" aria-label="5 z 5 hvězd">
+                            <span>★★★★★</span>
+                        </div>
+                        <p>
+                            "Kvalitní zpracování, rychlá instalace. Doporučuji."
+                        </p>
+                        <cite>— Pavel M., Litoměřice</cite>
+                    </blockquote>
+
+                    <blockquote class="review-card">
+                        <div class="review-stars" aria-label="5 z 5 hvězd">
+                            <span>★★★★★</span>
+                        </div>
+                        <p>
+                            "Skvělá komunikace a profesionální přístup. Budeme určitě opakovat!"
+                        </p>
+                        <cite>— Martina S., Teplice</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section" aria-labelledby="contact-title">
+            <div class="container">
+                <h2 id="contact-title" class="section-title">Kontakt</h2>
+                <p class="section-subtitle">
+                    Jste připraveni na pořádnou zábavu? Napište nám!
+                </p>
+
+                <div class="contact-content">
+                    <div class="inquiry-form">
+                        <form class="contact-form" data-contact-form novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Jméno a příjmení *</label>
+                                    <input type="text" id="name" name="name" required aria-describedby="name-error">
+                                    <div class="error-message" id="name-error" role="alert"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Telefon *</label>
+                                    <input type="tel" id="phone" name="phone" required aria-describedby="phone-error">
+                                    <div class="error-message" id="phone-error" role="alert"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">E-mail *</label>
+                                    <input type="email" id="email" name="email" required aria-describedby="email-error">
+                                    <div class="error-message" id="email-error" role="alert"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="event-date">Datum akce</label>
+                                    <input type="date" id="event-date" name="event-date" aria-describedby="date-error">
+                                    <div class="error-message" id="date-error" role="alert"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Zpráva *</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Popište svou akci, požadované atrakce a další detaily..." aria-describedby="message-error"></textarea>
+                                <div class="error-message" id="message-error" role="alert"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="gdpr" required aria-describedby="gdpr-error">
+                                    <span class="checkmark"></span>
+                                    Souhlasím se zpracováním osobních údajů podle GDPR *
+                                </label>
+                                <div class="error-message" id="gdpr-error" role="alert"></div>
+                            </div>
+
+                            <button type="submit" class="submit-btn" data-submit-btn>
+                                <span data-btn-text>Odeslat poptávku</span>
+                                <span data-btn-loader style="display: none;">
+                                    <span class="spinner-small"></span>
+                                    Odesílám...
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <h3>Kontaktní údaje</h3>
+                            <div class="info-item">
+                                <span class="info-icon" aria-hidden="true">📞</span>
+                                <a href="tel:+420123456789">+420 123 456 789</a>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon" aria-hidden="true">📧</span>
+                                <a href="mailto:info@bezvaparta.cz">info@bezvaparta.cz</a>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon" aria-hidden="true">📍</span>
+                                <span>Ústecký kraj a okolí</span>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>Provozní doba</h3>
+                            <div class="info-item">
+                                <span class="info-icon" aria-hidden="true">🕒</span>
+                                <span>Po-Ne: 8:00 - 20:00</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon" aria-hidden="true">⚡</span>
+                                <span>Rychlé odpovědi do 2 hodin</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Bezva Parta s.r.o.</h4>
+                    <p>
+                        Specializujeme se na pronájem nafukovacích atrakcí pro všechny typy akcí. Naší prioritou je bezpečnost a spokojenost našich zákazníků.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" rel="noopener noreferrer">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24V15.564H7.078V12.073H10.125V9.405C10.125 6.348 11.917 4.688 14.658 4.688C15.97 4.688 17.344 4.922 17.344 4.922V7.875H15.83C14.341 7.875 13.875 8.8 13.875 9.75V12.073H17.203L16.671 15.564H13.875V24C19.612 23.094 24 18.1 24 12.073Z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" rel="noopener noreferrer">
+                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163C15.204 2.163 15.584 2.175 16.85 2.233C20.102 2.381 21.621 3.924 21.769 7.152C21.827 8.417 21.838 8.797 21.838 12.001C21.838 15.206 21.826 15.585 21.769 16.85C21.62 20.075 20.105 21.621 16.85 21.769C15.584 21.827 15.206 21.839 12 21.839C8.796 21.839 8.416 21.827 7.151 21.769C3.891 21.62 2.38 20.07 2.232 16.849C2.174 15.584 2.162 15.205 2.162 12C2.162 8.796 2.175 8.417 2.232 7.151C2.381 3.924 3.896 2.38 7.151 2.232C8.417 2.175 8.796 2.163 12 2.163ZM12 0C8.741 0 8.333 0.014 7.053 0.072C2.695 0.272 0.273 2.69 0.073 7.052C0.014 8.333 0 8.741 0 12C0 15.259 0.014 15.668 0.072 16.948C0.272 21.306 2.69 23.728 7.052 23.928C8.333 23.986 8.741 24 12 24C15.259 24 15.668 23.986 16.948 23.928C21.302 23.728 23.73 21.31 23.927 16.948C23.986 15.668 24 15.259 24 12C24 8.741 23.986 8.333 23.928 7.053C23.732 2.699 21.311 0.273 16.949 0.073C15.668 0.014 15.259 0 12 0ZM12 5.838C8.597 5.838 5.838 8.597 5.838 12S8.597 18.163 12 18.163S18.162 15.404 18.162 12S15.403 5.838 12 5.838ZM12 16C9.791 16 8 14.21 8 12S9.791 8 12 8S16 9.79 16 12S14.209 16 12 16ZM18.406 4.155C18.406 5.052 17.68 5.778 16.781 5.778C15.882 5.778 15.156 5.052 15.156 4.155C15.156 3.258 15.882 2.532 16.781 2.532C17.68 2.532 18.406 3.258 18.406 4.155Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Rychlé odkazy</h4>
+                    <ul class="footer-links">
+                        <li><a href="#catalog">Katalog atrakcí</a></li>
+                        <li><a href="#services">Naše služby</a></li>
+                        <li><a href="#about">O nás</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Kategorie</h4>
+                    <ul class="footer-links">
+                        <li><a href="#catalog?category=skakaci-hrady">Skákací hrady</a></li>
+                        <li><a href="#catalog?category=skluzavky">Obří skluzavky</a></li>
+                        <li><a href="#catalog?category=sportovni-aktivity">Sportovní aktivity</a></li>
+                        <li><a href="#catalog?category=party-vybaveni">Párty vybavení</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Právní informace</h4>
+                    <ul class="footer-links">
+                        <li><a href="/obchodni-podminky">Obchodní podmínky</a></li>
+                        <li><a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a></li>
+                        <li><a href="/reklamacni-rad">Reklamační řád</a></li>
+                        <li><a href="/cookies">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    &copy; 2024 Bezva Parta s.r.o. Všechna práva vyhrazena.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div id="attractionModal" class="attraction-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+        <div class="modal-overlay" data-modal-close></div>
+        <div class="modal-container">
+            <button class="modal-close" aria-label="Zavřít modal" data-modal-close>&times;</button>
+
+            <div class="modal-content">
+                <!-- Gallery -->
+                <div class="modal-gallery">
+                    <div class="main-image">
+                        <img id="modalMainImage" src="" alt="" loading="lazy">
+                        <div class="image-navigation">
+                            <button class="nav-btn prev-btn" aria-label="Předchozí obrázek" data-image-prev>‹</button>
+                            <button class="nav-btn next-btn" aria-label="Následující obrázek" data-image-next>›</button>
+                        </div>
+                    </div>
+                    <div class="thumbnail-gallery" data-thumbnail-gallery>
+                        <!-- Thumbnails will be dynamically generated -->
+                    </div>
+                </div>
+
+                <!-- Info Panel -->
+                <div class="modal-info">
+                    <header class="attraction-header">
+                        <h2 id="modalTitle">Detail atrakce</h2>
+                        <div class="attraction-rating">
+                            <div class="stars" data-modal-stars>
+                                ★★★★★
+                            </div>
+                            <span class="reviews-count" data-modal-reviews>(0 recenzí)</span>
+                        </div>
+                    </header>
+
+                    <!-- Price Section -->
+                    <div class="price-section">
+                        <div class="price-display">
+                            <span class="price-from">od</span>
+                            <span class="main-price" data-modal-price>0</span>
+                            <span class="currency">Kč</span>
+                        </div>
+                        <div class="price-note">
+                            cena za den
+                        </div>
+                    </div>
+
+                    <!-- Specifications -->
+                    <div class="specifications">
+                        <h3>Technické údaje</h3>
+                        <div class="spec-grid" data-modal-specs>
+                            <!-- Specs will be dynamically generated -->
+                        </div>
+                    </div>
+
+                    <!-- Reservation Form -->
+                    <form class="reservation-form" data-reservation-form>
+                        <h3>Rychlá rezervace</h3>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="eventDate">Datum akce</label>
+                                <input type="date" id="eventDate" name="eventDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="eventTime">Čas začátku</label>
+                                <select id="eventTime" name="eventTime">
+                                    <option value="08:00">08:00</option>
+                                    <option value="09:00">09:00</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="rentalDays">Počet dní</label>
+                                <select id="rentalDays" name="rentalDays">
+                                    <option value="1">1 den</option>
+                                    <option value="2">2 dny</option>
+                                    <option value="3">3 dny</option>
+                                    <option value="4">4 dny</option>
+                                    <option value="5">5 dní</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="participants">Počet účastníků</label>
+                                <input type="number" id="participants" name="participants" value="10" min="1" max="50">
+                            </div>
+                        </div>
+
+                        <!-- Additional Services -->
+                        <div class="additional-services">
+                            <h4>Doplňkové služby</h4>
+                            <div class="service-options" data-service-options>
+                                <!-- Services will be dynamically generated -->
+                            </div>
+                        </div>
+
+                        <!-- Price Calculator -->
+                        <div class="price-calculator" data-price-calculator>
+                            <div class="calculation-row">
+                                <span>Základní cena</span>
+                                <span class="calc-price" data-calc-base>0 Kč</span>
+                            </div>
+                            <div class="calculation-row total-row">
+                                <strong>Celkem</strong>
+                                <strong class="calc-price total-price" data-calc-total>0 Kč</strong>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="action-buttons">
+                            <button type="button" class="btn-secondary" data-modal-close>Zavřít</button>
+                            <button type="submit" class="btn-primary" data-add-to-cart>
+                                <span>Přidat do košíku</span>
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7 4V2A1 1 0 0 0 5 2V4H1A1 1 0 0 0 1 6H2.08L4.15 17.25A3 3 0 0 0 7.12 20H16.88A3 3 0 0 0 19.85 17.25L21.92 6H23A1 1 0 0 0 23 4H19V2A1 1 0 0 0 17 2V4H7Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Modal Tabs -->
+            <div class="modal-tabs">
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="overview">Přehled</button>
+                    <button class="tab-btn" data-tab="included">Co je zahrnuto</button>
+                    <button class="tab-btn" data-tab="safety">Bezpečnost</button>
+                    <button class="tab-btn" data-tab="reviews">Recenze</button>
+                </div>
+
+                <div class="tab-content">
+                    <div class="tab-panel active" data-tab-panel="overview">
+                        <p id="modalDescription" data-modal-description>
+                            Popis se načte automaticky podle vybraného produktu z katalogu.
+                        </p>
+                    </div>
+
+                    <div class="tab-panel" data-tab-panel="included">
+                        <ul class="included-list" data-modal-included>
+                            <!-- Included items will be dynamically generated -->
+                        </ul>
+                    </div>
+
+                    <div class="tab-panel" data-tab-panel="safety">
+                        <ul class="safety-list" data-modal-safety>
+                            <!-- Safety instructions will be dynamically generated -->
+                        </ul>
+                    </div>
+
+                    <div class="tab-panel" data-tab-panel="reviews">
+                        <div class="reviews-container" data-modal-reviews-container>
+                            <!-- Reviews will be dynamically generated -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" data-cart-sidebar>
+        <div class="cart-backdrop" data-cart-close></div>
+        <div class="cart-container">
+            <header class="cart-header">
+                <h2>Košík</h2>
+                <button class="cart-close" data-cart-close aria-label="Zavřít košík">&times;</button>
+            </header>
+
+            <div class="cart-content" data-cart-content>
+                <!-- Cart items will be dynamically generated -->
+            </div>
+
+            <footer class="cart-footer">
+                <div class="cart-total">
+                    <div class="total-row">
+                        <span>Celkem:</span>
+                        <strong data-cart-total>0 Kč</strong>
+                    </div>
+                </div>
+                <div class="cart-actions">
+                    <button class="btn btn-secondary" data-cart-clear>Vyprázdnit košík</button>
+                    <button class="btn btn-primary" data-cart-checkout>Pokračovat k objednávce</button>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Toast Region -->
+    <div id="toastRegion" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Scripts -->
+    <script src="js/products.js" defer></script>
+    <script src="js/cart.js" defer></script>
+    <script src="js/modal.js" defer></script>
+    <script src="js/script.js" defer></script>
+
+
+    <!-- Additional styles for new components -->
+    <style>
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--primary-green);
+            color: var(--dark-bg);
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: top 0.3s;
+        }
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        /* Screen reader only */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Loading spinner */
+        .catalog-loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+        }
+
+        .loading-spinner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            color: var(--primary-green);
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--primary-green);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .spinner-small {
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Catalog filters */
+        .catalog-filters {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-bg);
+        }
+
+        .filter-group select,
+        .filter-group input {
+            padding: 12px;
+            border: 2px solid var(--light-green);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        /* Reviews section */
+        .reviews-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .review-stars {
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+
+        .review-card p {
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .review-card cite {
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        /* Form improvements */
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 4px;
+            display: block;
+        }
+
+        .form-group input:invalid,
+        .form-group textarea:invalid {
+            border-color: #dc3545;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            margin: 0;
+        }
+
+        /* Social links */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-green);
+            color: var(--dark-bg);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .catalog-filters {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>
